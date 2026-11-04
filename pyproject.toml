@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "epuscreeningcompiler-gui"
+version = "0.0.1"
+description = "A tkinter GUI wrapping the epuscreeningcompiler command line application"
+license = { text = "GPL-3.0-or-later" }
+requires-python = ">=3.8"
+dependencies = ["epuscreeningcompiler"]
+
+[project.gui-scripts]
+epuscreeningcompiler-gui = "epuscreeningcompiler_gui.app:main"
+
+[tool.setuptools.packages.find]
+include = ["epuscreeningcompiler_gui*"]
