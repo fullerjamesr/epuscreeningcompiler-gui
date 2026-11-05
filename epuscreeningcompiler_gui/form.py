@@ -1,4 +1,5 @@
-"""Build a form from the epuscreeningcompiler ArgumentParser, and turn its values back into an argv list.
+"""
+Build a form from the epuscreeningcompiler ArgumentParser, and turn its values back into an argv list.
 
 The introspection (`describe`) and argv building (`build_argv`, `validate`) are pure and need no display; `Form` is the
 tkinter widget layer on top of them.
@@ -110,10 +111,6 @@ class Form(ttk.Frame):
             ttk.Label(box, text=f.help, wraplength=wraplength, foreground="gray40").grid(
                 row=99, column=0, columnspan=3, sticky="w")
             row += 1
-        if parser.epilog:
-            ttk.Separator(self).grid(row=row, sticky="ew", pady=4)
-            ttk.Label(self, text=parser.epilog, wraplength=wraplength, foreground="gray40").grid(
-                row=row + 1, sticky="w")
 
     def _build_field(self, box, f):
         title = f.label + (" *" if f.required else "")
